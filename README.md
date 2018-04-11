@@ -15,7 +15,7 @@
 - La détecter :
 
 Insérer du code HTML dans l'input qui contient le message que l'on veut poster.
-Le mieux est d'utiliser soit des balises XHTML de style aujourd'hui obsolètes ou des balises de titre car le message inséré ensuite prendra le style de ces balises (texte en gras pour la balise ** <b\> ** par exemple).
+Le mieux est d'utiliser soit des balises XHTML de style aujourd'hui obsolètes ou des balises de titre car le message inséré ensuite prendra le style de ces balises (texte en gras pour la balise **<b\>** par exemple).
 Le plus efficace étant d'injecter du CSS en même temps que le HTML, avec un bon gros bazooka des familles, comme ceci :
 
 ```
