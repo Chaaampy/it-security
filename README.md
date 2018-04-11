@@ -30,3 +30,38 @@ Si on veut être un vrai troll, on peut insérer un code du genre :
 ```
 <script>alert("Je t'ai niqué :) ");</script>
 ```
+
+- Se protéger :
+
+On pourrait (entre autres) modifier ce code, présent dans le fichier **newMessage.php** :
+
+```
+$array = array(
+    ':idUser' => intval($_SESSION['currentUser']['id']),
+    ':message' => $_POST['txtMessage']);
+```
+
+En :
+
+```
+$array = array(
+    ':idUser' => intval($_SESSION['currentUser']['id']),
+    ':message' => htmlentities($_POST['txtMessage']));
+```
+
+Ce qui aura pour effet d'echapper les caractères HTML, et d'éviter qu'on puisse tout casser comme un sauvage.
+
+##### Injection SQL :
+
+- La détecter et l'exploiter :
+
+Sachant que les tables users sont souvent structurées et nommées de la même manière, on peut directement essayer de **niquer le game** comme disent les jeunes.
+Sur la page de connexion, qui n'est pas protégée, on peut entrer une requête comme celle présente ci-dessous, ce qui aura pour effet de créer un user pour lequel on determine le name, password etc. On peut donc se connecter à l'interface admin avec ces identifiants par la suite.
+
+```
+toto'; INSERT INTO user VALUES('10', 'name', 'password', 'jetai@niqué.com');'
+```
+
+- Se protéger :
+
+On peut préparer notre requête en PDO, comme celle présente dans le fichier **newMessage.php**.
