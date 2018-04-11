@@ -65,7 +65,8 @@ Sur la page de connexion, qui n'est pas protégée, on peut entrer une requête 
 ```
 toto'; INSERT INTO user VALUES('10', 'name', 'password', 'jetai@niqué.com');'
 ```
+De plus, si une personne arrive à s'introduire dans la base de données et à afficher l'ensemble des utilisateurs du site, il se rendra vite compte que les mots de passe sont hachés en **MD5** et pourra donc facilement "décrypter" ces mots de passe vu que ce mode de hachage est obsolète.
 
 - Se protéger :
 
-On peut préparer notre requête en PDO, comme celle présente dans le fichier **newMessage.php**.
+On peut préparer notre requête en PDO, comme celle présente dans le fichier **newMessage.php** et, pour le hachage des mots de passe, utiliser d'autres systèmes de hachage en complément d'un "grin de sel".
