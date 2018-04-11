@@ -8,9 +8,9 @@
 - Lucas Boillat
 - Thomas Laporte
 
-### Failles présentes et comment les exploiter :
+## Failles présentes et comment les exploiter :
 
-##### Faille XSS :
+### Faille XSS :
 
 - La détecter :
 
@@ -51,7 +51,7 @@ $array = array(
 
 Ce qui aura pour effet d'echapper les caractères HTML, et d'éviter qu'on puisse tout casser comme un sauvage.
 
-##### Injection SQL :
+### Injection SQL :
 
 - La détecter et l'exploiter :
 
